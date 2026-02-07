@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import videosData from '../../data/videos.json';
+
+const series = videosData.series;
+---
+
+<BaseLayout 
+  title="Videos" 
+  description="Tutoriales en video sobre desarrollo de software, .NET, Angular y más."
+>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Videos</h1>
+      <p class="page-description">
+        Tutoriales y cursos en video organizados por series temáticas.
+      </p>
+    </header>
+
+    <div class="series-list">
+      {series.map(serie => (
+        <section class="serie-section">
+          <div class="serie-header">
+            <h2>{serie.title}</h2>
+            <p>{serie.description}</p>
+          </div>
+          <div class="videos-grid">
+            {serie.videos.map(video => (
+              <article class="video-card card">
+                <a 
+                  href={`https://www.youtube.com/watch?v=${video.videoId}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="video-thumbnail"
+                >
+                  <img 
+                    src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`} 
+                    alt={video.title}
+                    loading="lazy"
+                    width="320"
+                    height="180"
+                  />
+                  <div class="play-overlay">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </a>
+                <div class="video-info">
+                  <h3>
+                    <a 
+                      href={`https://www.youtube.com/watch?v=${video.videoId}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      {video.title}
+                    </a>
+                  </h3>
+                  {video.description && (
+                    <p class="video-description">{video.description}</p>
+                  )}
+                  <div class="video-tags">
+                    {video.tags?.map((tag: string) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-container {
+    max-width: var(--content-full);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .page-header {
+    margin-bottom: var(--space-12);
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-4);
+  }
+  
+  .page-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+  
+  .series-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+  
+  .serie-section {
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .serie-section:last-child {
+    border-bottom: none;
+  }
+  
+  .serie-header {
+    margin-bottom: var(--space-8);
+  }
+  
+  .serie-header h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+  }
+  
+  .serie-header p {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin: 0;
+  }
+  
+  .videos-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  @media (min-width: 640px) {
+    .videos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .videos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .video-card {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail img {
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-normal);
+  }
+  
+  .video-thumbnail:hover img {
+    transform: scale(1.05);
+  }
+  
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .video-thumbnail:hover .play-overlay {
+    opacity: 1;
+  }
+  
+  .video-info {
+    padding: var(--space-4);
+  }
+  
+  .video-info h3 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-2);
+    line-height: 1.4;
+  }
+  
+  .video-info h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .video-info h3 a:hover {
+    color: var(--accent);
+  }
+  
+  .video-description {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .video-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+  
+  .video-tags .tag {
+    font-size: var(--text-xs);
+    padding: 2px 6px;
+  }
+</style>

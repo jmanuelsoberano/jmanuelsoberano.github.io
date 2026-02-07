@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content, headings } = await article.render();
+
+// Get related articles (same tags)
+const allArticles = await getCollection('articles', ({ data }) => !data.draft);
+const relatedArticles = allArticles
+  .filter(a => a.slug !== article.slug)
+  .filter(a => a.data.tags.some(tag => article.data.tags.includes(tag)))
+  .slice(0, 3);
+
+// Get prev/next
+const sortedArticles = allArticles.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const currentIndex = sortedArticles.findIndex(a => a.slug === article.slug);
+const prevArticle = sortedArticles[currentIndex + 1];
+const nextArticle = sortedArticles[currentIndex - 1];
+
+// Calculate reading time (rough estimate: 200 words per minute)
+const wordCount = article.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+---
+
+<BaseLayout 
+  title={article.data.title}
+  description={article.data.description}
+  ogImage={article.data.heroImage}
+>
+  <article class="article-page">
+    <div class="article-container">
+      <aside class="article-sidebar">
+        {headings.length > 0 && (
+          <nav class="toc" aria-label="Tabla de contenidos">
+            <h2>En este artículo</h2>
+            <ul>
+              {headings.filter(h => h.depth <= 3).map(heading => (
+                <li class={`depth-${heading.depth}`}>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </aside>
+
+      <div class="article-main">
+        <header class="article-header">
+          <div class="article-meta">
+            <time datetime={article.data.pubDate.toISOString()}>
+              {article.data.pubDate.toLocaleDateString('es-ES', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </time>
+            <span class="separator">·</span>
+            <span>{readingTime} min de lectura</span>
+          </div>
+          <h1>{article.data.title}</h1>
+          <p class="article-description">{article.data.description}</p>
+          <div class="article-tags">
+            {article.data.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </header>
+
+        <div class="article-content prose">
+          <Content />
+        </div>
+
+        <footer class="article-footer">
+          {relatedArticles.length > 0 && (
+            <section class="related-articles">
+              <h2>Artículos relacionados</h2>
+              <ul>
+                {relatedArticles.map(related => (
+                  <li>
+                    <a href={`/articulos/${related.slug}`}>{related.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <nav class="article-nav" aria-label="Navegación de artículos">
+            {prevArticle && (
+              <a href={`/articulos/${prevArticle.slug}`} class="nav-link prev">
+                <span class="nav-label">← Anterior</span>
+                <span class="nav-title">{prevArticle.data.title}</span>
+              </a>
+            )}
+            {nextArticle && (
+              <a href={`/articulos/${nextArticle.slug}`} class="nav-link next">
+                <span class="nav-label">Siguiente →</span>
+                <span class="nav-title">{nextArticle.data.title}</span>
+              </a>
+            )}
+          </nav>
+        </footer>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-page {
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-8);
+  }
+  
+  @media (min-width: 1024px) {
+    .article-container {
+      grid-template-columns: 250px 1fr;
+    }
+    
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+  }
+  
+  .toc {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+  
+  .toc h2 {
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+  }
+  
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .toc li {
+    margin-bottom: var(--space-2);
+  }
+  
+  .toc li.depth-3 {
+    padding-left: var(--space-4);
+  }
+  
+  .toc a {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: block;
+    padding: var(--space-1) 0;
+  }
+  
+  .toc a:hover {
+    color: var(--accent);
+  }
+  
+  .article-main {
+    max-width: var(--content-wide);
+  }
+  
+  .article-header {
+    margin-bottom: var(--space-8);
+  }
+  
+  .article-meta {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  
+  .separator {
+    color: var(--border-strong);
+  }
+  
+  .article-header h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .article-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+  
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .article-content {
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .article-footer {
+    margin-top: var(--space-8);
+  }
+  
+  .related-articles {
+    margin-bottom: var(--space-8);
+  }
+  
+  .related-articles h2 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+  }
+  
+  .related-articles ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .related-articles li {
+    margin-bottom: var(--space-2);
+  }
+  
+  .related-articles a {
+    font-size: var(--text-base);
+  }
+  
+  .article-nav {
+    display: grid;
+    gap: var(--space-4);
+  }
+  
+  @media (min-width: 640px) {
+    .article-nav {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .nav-link {
+    display: block;
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--transition-fast);
+  }
+  
+  .nav-link:hover {
+    border-color: var(--accent);
+  }
+  
+  .nav-link.next {
+    text-align: right;
+  }
+  
+  .nav-label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+  }
+  
+  .nav-title {
+    display: block;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  
+  @media (max-width: 1023px) {
+    .article-sidebar {
+      order: 2;
+    }
+  }
+</style>
