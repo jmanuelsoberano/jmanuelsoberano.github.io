@@ -125,27 +125,41 @@ const siteTitle = title ? `${title} | Manuel Soberano` : 'Manuel Soberano';
       </div>
     </footer>
 
-    <script>
-      // Theme toggle
-      const themeToggle = document.querySelector('[data-theme-toggle]');
-      const html = document.documentElement;
-      
-      // Check for saved theme preference or system preference
-      const savedTheme = localStorage.getItem('theme');
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      if (savedTheme) {
-        html.dataset.theme = savedTheme;
-      } else if (systemPrefersDark) {
-        html.dataset.theme = 'dark';
+    <script is:inline>
+      // Theme toggle - runs on every page load/navigation
+      function initThemeToggle() {
+        const themeToggle = document.querySelector('[data-theme-toggle]');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+          html.dataset.theme = savedTheme;
+        } else if (systemPrefersDark) {
+          html.dataset.theme = 'dark';
+        }
+        
+        // Remove existing listeners to avoid duplicates
+        const newToggle = themeToggle?.cloneNode(true);
+        if (themeToggle && newToggle) {
+          themeToggle.parentNode?.replaceChild(newToggle, themeToggle);
+          
+          newToggle.addEventListener('click', () => {
+            const currentTheme = html.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+          });
+        }
       }
       
-      themeToggle?.addEventListener('click', () => {
-        const currentTheme = html.dataset.theme;
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        html.dataset.theme = newTheme;
-        localStorage.setItem('theme', newTheme);
-      });
+      // Run on initial load
+      initThemeToggle();
+      
+      // Re-run after View Transitions
+      document.addEventListener('astro:after-swap', initThemeToggle);
     </script>
   </body>
 </html>
