@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Página no encontrada" description="La página que buscas no existe.">
+  <div class="error-page">
+    <h1>404</h1>
+    <p>Lo siento, la página que buscas no existe.</p>
+    <a href="/" class="btn btn-primary">Volver al inicio</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6);
+    text-align: center;
+  }
+  
+  .error-page h1 {
+    font-size: 8rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    line-height: 1;
+  }
+  
+  .error-page p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+</style>

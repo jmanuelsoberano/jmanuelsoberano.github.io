@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => !data.draft);
+const sortedArticles = articles.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Get all unique tags
+const allTags = [...new Set(articles.flatMap(a => a.data.tags))].sort();
+---
+
+<BaseLayout 
+  title="Artículos" 
+  description="Artículos sobre desarrollo de software, arquitectura, .NET, Angular y más."
+>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Artículos</h1>
+      <p class="page-description">
+        Reflexiones y tutoriales sobre desarrollo de software, arquitectura y tecnología.
+      </p>
+    </header>
+
+    {allTags.length > 0 && (
+      <nav class="tags-filter" aria-label="Filtrar por etiqueta">
+        <button class="tag active" data-filter="all">Todos</button>
+        {allTags.map(tag => (
+          <button class="tag" data-filter={tag}>{tag}</button>
+        ))}
+      </nav>
+    )}
+
+    <div class="articles-list">
+      {sortedArticles.length > 0 ? (
+        sortedArticles.map(article => (
+          <article class="article-item" data-tags={article.data.tags.join(',')}>
+            <div class="article-date">
+              <time datetime={article.data.pubDate.toISOString()}>
+                {article.data.pubDate.toLocaleDateString('es-ES', { 
+                  year: 'numeric', 
+                  month: 'short', 
+                  day: 'numeric' 
+                })}
+              </time>
+            </div>
+            <div class="article-content">
+              <h2>
+                <a href={`/articulos/${article.slug}`}>{article.data.title}</a>
+              </h2>
+              <p>{article.data.description}</p>
+              <div class="article-tags">
+                {article.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      ) : (
+        <p class="empty-state">No hay artículos publicados aún. ¡Pronto habrá contenido!</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const filterButtons = document.querySelectorAll('.tags-filter .tag');
+  const articles = document.querySelectorAll('.article-item');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      
+      // Update active state
+      filterButtons.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Filter articles
+      articles.forEach(article => {
+        const tags = article.dataset.tags?.split(',') || [];
+        if (filter === 'all' || tags.includes(filter)) {
+          article.style.display = '';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .page-container {
+    max-width: var(--content-wide);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .page-header {
+    margin-bottom: var(--space-8);
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-4);
+  }
+  
+  .page-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 50ch;
+  }
+  
+  .tags-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .tags-filter .tag {
+    cursor: pointer;
+  }
+  
+  .tags-filter .tag.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+  
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .article-item {
+    display: grid;
+    gap: var(--space-4);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  @media (min-width: 768px) {
+    .article-item {
+      grid-template-columns: 120px 1fr;
+      gap: var(--space-8);
+    }
+  }
+  
+  .article-date {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+  
+  .article-content h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+  
+  .article-content h2 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .article-content h2 a:hover {
+    color: var(--accent);
+  }
+  
+  .article-content p {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-4);
+  }
+  
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .empty-state {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: var(--space-12);
+  }
+</style>

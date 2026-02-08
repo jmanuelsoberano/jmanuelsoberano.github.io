@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import videosData from '../data/videos.json';
+
+const articles = await getCollection('articles', ({ data }) => !data.draft);
+const projects = await getCollection('projects');
+
+// Get latest articles (3)
+const latestArticles = articles
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Get featured projects (2)
+const featuredProjects = projects
+  .filter(p => p.data.featured)
+  .slice(0, 2);
+
+// Get latest videos (4)
+const allVideos = videosData.series.flatMap(s => 
+  s.videos.map(v => ({ ...v, seriesTitle: s.title, seriesId: s.id }))
+);
+const latestVideos = allVideos
+  .sort((a, b) => new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf())
+  .slice(0, 4);
+---
+
+<BaseLayout title="Inicio" description="Manuel Soberano - Desarrollador de software, emprendedor y entusiasta por nuevas tecnologías.">
+  <section class="hero">
+    <div class="hero-content">
+      <img 
+        src="/images/profile.jpg" 
+        alt="Manuel Soberano" 
+        class="hero-avatar"
+        width="80"
+        height="80"
+      />
+      <h1>Programando con Manuel Soberano</h1>
+      <p class="hero-description">
+        Hola, soy <strong>Manuel Soberano</strong>. Desarrollador de software, emprendedor y 
+        entusiasta por el desarrollo, creación y aplicación de nuevas tecnologías.
+      </p>
+      <div class="hero-cta">
+        <a href="/articulos" class="btn btn-primary">Ver artículos</a>
+        <a href="/videos" class="btn btn-secondary">Ver videos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Últimos Artículos</h2>
+      <a href="/articulos" class="section-link">Ver todos →</a>
+    </div>
+    <div class="articles-grid">
+      {latestArticles.length > 0 ? (
+        latestArticles.map(article => (
+          <article class="article-card card">
+            <div class="article-meta">
+              <time datetime={article.data.pubDate.toISOString()}>
+                {article.data.pubDate.toLocaleDateString('es-ES', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
+              </time>
+            </div>
+            <h3>
+              <a href={`/articulos/${article.slug}`}>{article.data.title}</a>
+            </h3>
+            <p>{article.data.description}</p>
+            <div class="tags">
+              {article.data.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      ) : (
+        <p class="empty-state">Próximamente más artículos...</p>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Proyectos Destacados</h2>
+      <a href="/proyectos" class="section-link">Ver todos →</a>
+    </div>
+    <div class="projects-grid">
+      {featuredProjects.length > 0 ? (
+        featuredProjects.map(project => (
+          <article class="project-card card">
+            <h3>
+              <a href={`/proyectos/${project.slug}`}>{project.data.title}</a>
+            </h3>
+            <p>{project.data.description}</p>
+            <div class="stack">
+              {project.data.stack.map(tech => (
+                <span class="tag">{tech}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      ) : (
+        <p class="empty-state">Próximamente más proyectos...</p>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Videos Recientes</h2>
+      <a href="/videos" class="section-link">Ver todos →</a>
+    </div>
+    <div class="videos-grid">
+      {latestVideos.map(video => (
+        <article class="video-card card">
+          <a 
+            href={`https://www.youtube.com/watch?v=${video.videoId}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="video-thumbnail"
+          >
+            <img 
+              src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`} 
+              alt={video.title}
+              loading="lazy"
+              width="320"
+              height="180"
+            />
+            <div class="play-overlay">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </a>
+          <div class="video-info">
+            <span class="video-series">{video.seriesTitle}</span>
+            <h3>
+              <a 
+                href={`https://www.youtube.com/watch?v=${video.videoId}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {video.title}
+              </a>
+            </h3>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-16) var(--space-6);
+    text-align: center;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .hero-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+  
+  .hero-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto var(--space-6);
+    object-fit: cover;
+  }
+  
+  .hero h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .section {
+    max-width: var(--content-full);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-8);
+  }
+  
+  .section-header h2 {
+    margin: 0;
+  }
+  
+  .section-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+  
+  .articles-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  @media (min-width: 768px) {
+    .articles-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .article-card h3 {
+    font-size: var(--text-xl);
+    margin: var(--space-3) 0;
+  }
+  
+  .article-card h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .article-card h3 a:hover {
+    color: var(--accent);
+  }
+  
+  .article-meta {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+  
+  .article-card p {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .projects-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .project-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .project-card h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .project-card h3 a:hover {
+    color: var(--accent);
+  }
+  
+  .project-card p {
+    margin-bottom: var(--space-4);
+  }
+  
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .videos-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  @media (min-width: 640px) {
+    .videos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .videos-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .video-card {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail {
+    position: relative;
+    display: block;
+  }
+  
+  .video-thumbnail img {
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-normal);
+  }
+  
+  .video-thumbnail:hover img {
+    transform: scale(1.05);
+  }
+  
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .video-thumbnail:hover .play-overlay {
+    opacity: 1;
+  }
+  
+  .video-info {
+    padding: var(--space-4);
+  }
+  
+  .video-series {
+    font-size: var(--text-xs);
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .video-info h3 {
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+    line-height: 1.4;
+  }
+  
+  .video-info h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .video-info h3 a:hover {
+    color: var(--accent);
+  }
+  
+  .empty-state {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

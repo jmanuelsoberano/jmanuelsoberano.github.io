@@ -1,0 +1,158 @@
+{
+    "series": [
+        {
+            "id": "arquitectura-net",
+            "title": "Arquitectura de Software en .NET",
+            "description": "Patrones avanzados de arquitectura para aplicaciones .NET Core",
+            "videos": [
+                {
+                    "id": "arquitectura-avanzada-net",
+                    "title": "Arquitectura de Software Avanzada en .NET Core: Clean Architecture, CQRS, Entity Framework y más",
+                    "videoId": "W70ROca-spc",
+                    "thumbnail": "/images/posts/arquitectura-avanzada-net.png",
+                    "description": "Aprende los patrones más importantes de arquitectura de software aplicados a .NET Core",
+                    "pubDate": "2022-01-15",
+                    "tags": [
+                        "dotnet",
+                        "clean-architecture",
+                        "cqrs",
+                        "entity-framework"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "restful-api",
+            "title": "Building RESTful APIs with ASP.NET Core",
+            "description": "Serie completa sobre construcción de APIs RESTful",
+            "videos": [
+                {
+                    "id": "restful-api-aspnet-3",
+                    "title": "Building a RESTful API with ASP.NET Core 3",
+                    "videoId": "XATHQ7fCgBw",
+                    "playlistId": "PLb0-oWxM7NZQiuGQTtZKZYxpY0lqMlAeF",
+                    "thumbnail": "/images/posts/restful-api-aspnet3.jpg",
+                    "description": "Guía paso a paso para construir APIs REST profesionales",
+                    "pubDate": "2020-03-10",
+                    "tags": [
+                        "aspnet",
+                        "rest",
+                        "api",
+                        "dotnet"
+                    ]
+                },
+                {
+                    "id": "restful-api-advanced",
+                    "title": "Building Advanced RESTful API with ASP.NET Core 3.1",
+                    "videoId": "kc38oTRWSks",
+                    "playlistId": "PLb0-oWxM7NZSbXll2orB0GVaJ64MgCWEX",
+                    "thumbnail": "/images/posts/restful-api-advanced.jpg",
+                    "description": "Técnicas avanzadas para APIs de alto rendimiento",
+                    "pubDate": "2020-06-20",
+                    "tags": [
+                        "aspnet",
+                        "rest",
+                        "api",
+                        "advanced"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "seguridad-jwt",
+            "title": "Seguridad con JSON Web Tokens",
+            "description": "Autenticación y autorización con JWT",
+            "videos": [
+                {
+                    "id": "securing-webapi-jwt",
+                    "title": "Securing a Web API using JSON Web Tokens",
+                    "videoId": "8FTJopfyIx4",
+                    "playlistId": "PLb0-oWxM7NZQO6eT5YX55GcrsjvTL7yRn",
+                    "thumbnail": "/images/posts/securing-webapi-jwt.jpg",
+                    "description": "Implementa seguridad robusta en tus APIs",
+                    "pubDate": "2020-08-15",
+                    "tags": [
+                        "jwt",
+                        "security",
+                        "aspnet",
+                        "authentication"
+                    ]
+                },
+                {
+                    "id": "consuming-jwt-angular",
+                    "title": "Consuming a Web API secured with JSON Web Tokens using Angular",
+                    "videoId": "e3l6arj3-Yg",
+                    "playlistId": "PLb0-oWxM7NZTaKr_s3aqDqFusu82VJjO7",
+                    "thumbnail": "/images/posts/consuming-jwt-angular.jpg",
+                    "description": "Integra autenticación JWT en tu app Angular",
+                    "pubDate": "2020-09-01",
+                    "tags": [
+                        "angular",
+                        "jwt",
+                        "frontend",
+                        "authentication"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "angular-tools",
+            "title": "Herramientas Angular",
+            "description": "Automatización y productividad en Angular",
+            "videos": [
+                {
+                    "id": "angular-schematics",
+                    "title": "Automated scaffolding with Angular Schematics",
+                    "videoId": "7WcrZw2YTng",
+                    "playlistId": "PLb0-oWxM7NZTD2t_M-jwXIMfxowMXp82N",
+                    "thumbnail": "/images/posts/angular-schematics.jpg",
+                    "description": "Crea generadores de código personalizados",
+                    "pubDate": "2020-04-20",
+                    "tags": [
+                        "angular",
+                        "schematics",
+                        "automation",
+                        "tooling"
+                    ]
+                },
+                {
+                    "id": "npm-package",
+                    "title": "Creating and Publishing an NPM Package",
+                    "videoId": "YUfpOkE-OKo",
+                    "playlistId": "PLb0-oWxM7NZTpZTtC2PdxNIdNfjScxa1w",
+                    "thumbnail": "/images/posts/npm-package.jpg",
+                    "description": "Publica tu primera librería en NPM",
+                    "pubDate": "2020-05-10",
+                    "tags": [
+                        "npm",
+                        "nodejs",
+                        "packages",
+                        "publishing"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "entity-framework",
+            "title": "Entity Framework Core",
+            "description": "ORM para .NET Core",
+            "videos": [
+                {
+                    "id": "ef-core-getting-started",
+                    "title": "Entity Framework Core 2 Getting Started",
+                    "videoId": "n4MTXrvaCAk",
+                    "playlistId": "PLb0-oWxM7NZSOrP4qF75dZtvGsvkbjr_7",
+                    "thumbnail": "/images/posts/ef-core-getting-started.jpg",
+                    "description": "Primeros pasos con Entity Framework Core",
+                    "pubDate": "2019-11-15",
+                    "tags": [
+                        "entity-framework",
+                        "dotnet",
+                        "orm",
+                        "database"
+                    ]
+                }
+            ]
+        }
+    ]
+}
