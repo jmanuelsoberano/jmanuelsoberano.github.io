@@ -1,504 +1,659 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<!--begin::Head-->
-	<head><base href="../../../">
-		<meta charset="utf-8" />
-		<title>Manuel Soberano Personal Blog</title>
-		<meta name="description" content="Manuel Soberano Personal Blog" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<link rel="canonical" href="https://keenthemes.com/metronic" />
-		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-		<!--end::Fonts-->
-		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-		<!--end::Global Theme Styles-->
-		<!--begin::Layout Themes(used by all pages)-->
-		<link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
-		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="assets/media/logos/favicon.jpg" />
-	</head>
-	<!--end::Head-->
-	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-mobile-fixed page-loading">
-		<!--begin::Main-->
-		<!--begin::Header Mobile-->
-		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
-			<!--begin::Logo-->
-<!--			<a href="index.html">-->
-<!--				<img alt="Logo" src="assets/media/logos/logo-light.png" />-->
-<!--			</a>-->
-			<!--end::Logo-->
-			<!--begin::Toolbar-->
-			<div class="d-flex align-items-center">
-				<!--begin::Aside Mobile Toggle-->
-<!--				<button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">-->
-<!--					<span></span>-->
-<!--				</button>-->
-				<!--end::Aside Mobile Toggle-->
-				<!--begin::Header Menu Mobile Toggle-->
-				<button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
-					<span></span>
-				</button>
-				<!--end::Header Menu Mobile Toggle-->
-				<!--begin::Topbar Mobile Toggle-->
-				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
-					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-								<polygon points="0 0 24 0 24 24 0 24" />
-								<path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-								<path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
-							</g>
-						</svg>
-						<!--end::Svg Icon-->
-					</span>
-				</button>
-				<!--end::Topbar Mobile Toggle-->
-			</div>
-			<!--end::Toolbar-->
-		</div>
-		<!--end::Header Mobile-->
-		<div class="d-flex flex-column flex-root">
-			<!--begin::Page-->
-			<div class="d-flex flex-row flex-column-fluid page">
+<!--begin::Head-->
 
-				<!--begin::Wrapper-->
-				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-					<!--begin::Header-->
-					<div id="kt_header" class="header header-fixed">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex align-items-stretch justify-content-between">
-							<!--begin::Header Menu Wrapper-->
-							<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
-								<!--begin::Header Menu-->
-								<div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
-									<!--begin::Header Nav-->
-									<ul class="menu-nav">
-										<li class="menu-item menu-item-submenu menu-item-rel menu-item-active" data-menu-toggle="click" aria-haspopup="true">
-											<a href="index.html" class="menu-link menu-toggle">
-												<span class="menu-text">Home</span>
-											</a>
-										</li>
-									</ul>
-									<!--end::Header Nav-->
-								</div>
-								<!--end::Header Menu-->
+<head>
+	<base href="../../../">
+	<meta charset="utf-8" />
+	<title>Manuel Soberano Personal Blog</title>
+	<meta name="description" content="Manuel Soberano Personal Blog" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="canonical" href="https://keenthemes.com/metronic" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Global Theme Styles(used by all pages)-->
+	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Theme Styles-->
+	<!--begin::Layout Themes(used by all pages)-->
+	<link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+	<!--end::Layout Themes-->
+	<link rel="shortcut icon" href="assets/media/logos/favicon.jpg" />
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="header-fixed header-mobile-fixed page-loading">
+	<!--begin::Main-->
+	<!--begin::Header Mobile-->
+	<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+		<!--begin::Logo-->
+		<!--			<a href="index.html">-->
+		<!--				<img alt="Logo" src="assets/media/logos/logo-light.png" />-->
+		<!--			</a>-->
+		<!--end::Logo-->
+		<!--begin::Toolbar-->
+		<div class="d-flex align-items-center">
+			<!--begin::Aside Mobile Toggle-->
+			<!--				<button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">-->
+			<!--					<span></span>-->
+			<!--				</button>-->
+			<!--end::Aside Mobile Toggle-->
+			<!--begin::Header Menu Mobile Toggle-->
+			<button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
+				<span></span>
+			</button>
+			<!--end::Header Menu Mobile Toggle-->
+			<!--begin::Topbar Mobile Toggle-->
+			<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
+				<span class="svg-icon svg-icon-xl">
+					<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+						height="24px" viewBox="0 0 24 24" version="1.1">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<polygon points="0 0 24 0 24 24 0 24" />
+							<path
+								d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
+								fill="#000000" fill-rule="nonzero" opacity="0.3" />
+							<path
+								d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
+								fill="#000000" fill-rule="nonzero" />
+						</g>
+					</svg>
+					<!--end::Svg Icon-->
+				</span>
+			</button>
+			<!--end::Topbar Mobile Toggle-->
+		</div>
+		<!--end::Toolbar-->
+	</div>
+	<!--end::Header Mobile-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="d-flex flex-row flex-column-fluid page">
+
+			<!--begin::Wrapper-->
+			<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+				<!--begin::Header-->
+				<div id="kt_header" class="header header-fixed">
+					<!--begin::Container-->
+					<div class="container-fluid d-flex align-items-stretch justify-content-between">
+						<!--begin::Header Menu Wrapper-->
+						<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+							<!--begin::Header Menu-->
+							<div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
+								<!--begin::Header Nav-->
+								<ul class="menu-nav">
+									<li class="menu-item menu-item-submenu menu-item-rel menu-item-active"
+										data-menu-toggle="click" aria-haspopup="true">
+										<a href="index.html" class="menu-link menu-toggle">
+											<span class="menu-text">Home</span>
+										</a>
+									</li>
+								</ul>
+								<!--end::Header Nav-->
 							</div>
-							<!--end::Header Menu Wrapper-->
-							<!--begin::Topbar-->
-							<div class="topbar">
-								<!--begin::Social Networks-->
-								<div class="topbar-item">
-									<div class="btn btn-clean btn-lg mr-1">
-										<a class="svg-icon svg-icon-primary" href="https://www.linkedin.com/in/josemanuelcampossoberano/" target="_blank">
-											<img src="assets/media/svg/logos/linkedin.svg" height="24"/>
-										</a>
-									</div>
-								</div>
-								<div class="topbar-item">
-									<div class="btn btn-icon btn-clean btn-lg mr-1">
-										<a class="svg-icon svg-icon-primary" href="https://www.youtube.com/channel/UCcl4SkM6xgFoOCpVv1hKXCg" target="_blank">
-											<img src="assets/media/svg/logos/youtube-3.svg" height="24"/>
-										</a>
-									</div>
-								</div>
-								<div class="topbar-item">
-									<div class="btn btn-icon btn-clean btn-lg mr-1">
-										<a class="svg-icon svg-icon-primary" href="https://twitter.com/jmanuelsoberano" target="_blank">
-											<img src="assets/media/svg/logos/twitter.svg" height="24"/>
-										</a>
-									</div>
-								</div>
-								<div class="topbar-item">
-									<div class="btn btn-icon btn-clean btn-lg mr-1">
-										<a class="svg-icon svg-icon-primary" href="https://github.com/jmanuelsoberano" target="_blank">
-											<img src="assets/media/svg/logos/github-1.svg" height="24"/>
-										</a>
-									</div>
-								</div>
-								<!--end::Social Networks-->
-								<!--begin::User-->
-								<div class="topbar-item">
-									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
-										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">I'm Manuel Soberano</span>
-										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<img class="symbol" src="assets/media/client-logos/programando-con-manuel-soberano.jpg" width="50px">
-<!--											<span class="symbol-label font-size-h5 font-weight-bold">S</span>-->
-										</span>
-									</div>
-								</div>
-								<!--end::User-->
-							</div>
-							<!--end::Topbar-->
+							<!--end::Header Menu-->
 						</div>
-						<!--end::Container-->
-					</div>
-					<!--end::Header-->
-					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Entry-->
-						<div class="d-flex flex-column-fluid">
-							<!--begin::Container-->
-							<div class="container">
-								<!--begin::Hero-->
-								<div class="card card-custom overflow-hidden position-relative mb-8">
-									<!--begin::SVG-->
-									<div class="position-absolute bottom-0 left-0 right-0 d-none d-lg-flex flex-row-fluid">
-										<span class="svg-icon svg-icon-full flex-row-fluid svg-icon-dark opacity-3">
-											<!--begin::Svg Icon | path:assets/media/bg/home-2-bg.svg-->
-											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1200 172" style="enable-background:new 0 0 1200 172;" xml:space="preserve">
-<path class="st0" d="M2058,94c0,0,16-14,73-14s153,92,248,92s286-145,456-145s183,34,292,34s131-54,131-54v172H2058V94z" />
-<path class="st0" d="M0,87c0,0,16-14,73-14s153,92,248,92S607,20,777,20s183,34,292,34s131-54,131-54v172H0V87z" />
-</svg>
-											<!--end::Svg Icon-->
-										</span>
-									</div>
-									<div class="position-absolute d-flex top-0 right-0 offset-lg-5 col-lg-7 opacity-30 opacity-lg-100">
-										<span class="svg-icon svg-icon-full flex-row-fluid p-15">
-											<!--begin::Svg Icon | path:assets/media/svg/illustrations/working.svg-->
-											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="e66d77ca-31e8-442d-a5de-b801817c4280" data-name="Layer 1" width="1024.7" height="671.65" viewBox="0 0 1024.7 671.65">
-												<circle cx="720.55" cy="430.76" r="105" fill="url(#a374d817-ded2-4154-8f0a-fb69bb0241af)" />
-												<circle cx="720.55" cy="430.76" r="100" fill="#f5f5f5" />
-												<g opacity="0.5">
-													<path d="M811,482.47a62.52,62.52,0,0,0-64.27,55.82h-18a3.64,3.64,0,0,0-3.64,3.64v6a3.65,3.65,0,0,0,3.64,3.65h18A62.5,62.5,0,1,0,811,482.47Z" transform="translate(-87.65 -114.18)" fill="url(#fd39efba-8078-41b8-857e-e17431406f47)" />
-												</g>
-												<path d="M810.19,486.22a58.75,58.75,0,0,0-60.41,52.47H732.36a2.91,2.91,0,0,0-2.91,2.91v6.67a2.91,2.91,0,0,0,2.91,2.92h17.42a58.75,58.75,0,1,0,60.41-65Z" transform="translate(-87.65 -114.18)" fill="#fff" />
-												<circle cx="720.55" cy="430.76" r="41.25" fill="#795548" />
-												<path d="M829.45,524.94s11.77,18.28,8.4,32.5C837.85,557.44,851.3,535.09,829.45,524.94Z" transform="translate(-87.65 -114.18)" fill="#fff" opacity="0.2" />
-												<circle cx="746.8" cy="453.26" r="3.75" fill="#fff" opacity="0.2" />
-												<rect x="119.09" y="182.63" width="213.27" height="308.72" transform="translate(-156.47 -56.04) rotate(-12.75)" fill="url(#b2bf7fa1-65c2-4695-aeca-af8d6fc55ae3)" />
-												<rect x="334.38" y="133.91" width="213.27" height="308.72" transform="translate(-140.4 -9.72) rotate(-12.75)" fill="url(#a8abeec4-29f5-4a5c-9a38-56f560b9b0a3)" />
-												<rect x="122.15" y="186.27" width="207.97" height="302.01" transform="translate(-156.52 -55.94) rotate(-12.75)" fill="#6c63ff" />
-												<rect x="336.06" y="137.86" width="207.97" height="302.01" transform="translate(-140.56 -9.92) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="135.55" y="222.61" width="124.88" height="20.81" transform="translate(-134.2 -64.73) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="124.12" y="271.86" width="166.5" height="5.2" transform="translate(-143.12 -61.63) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="126.8" y="283.7" width="166.5" height="5.2" transform="translate(-145.67 -60.75) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="129.48" y="295.54" width="166.5" height="5.2" transform="translate(-148.21 -59.87) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="133.23" y="316.95" width="79.78" height="5.2" transform="translate(-153.92 -68.08) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="135.76" y="327.46" width="91.92" height="5.2" transform="translate(-156.02 -65.92) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="137.52" y="331.07" width="166.5" height="5.2" transform="translate(-155.86 -57.21) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="140.2" y="342.91" width="166.5" height="5.2" transform="translate(-158.4 -56.33) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="143.03" y="356.09" width="154.36" height="5.2" transform="translate(-161.39 -56.72) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="145.56" y="366.59" width="166.5" height="5.2" transform="translate(-163.5 -54.56) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="149.22" y="387.24" width="86.72" height="5.2" transform="translate(-168.95 -62.05) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="372.13" y="350.43" width="91.92" height="5.2" transform="translate(-155.26 -13.18) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="373.89" y="354.04" width="166.5" height="5.2" transform="translate(-155.1 -4.47) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="376.57" y="365.88" width="166.5" height="5.2" transform="translate(-157.64 -3.59) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="379.4" y="379.06" width="154.36" height="5.2" transform="translate(-160.63 -3.98) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="381.93" y="389.56" width="166.5" height="5.2" transform="translate(-162.74 -1.82) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="385.59" y="410.21" width="86.72" height="5.2" transform="translate(-168.19 -9.31) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="221.62" y="391.43" width="100.59" height="69.38" transform="translate(-175 -43.64) rotate(-12.75)" fill="#f5f5f5" />
-												<rect x="337.76" y="165.98" width="100.59" height="69.38" transform="translate(-122.37 -23.57) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="433.79" y="236.72" width="100.59" height="69.38" transform="translate(-135.62 -0.63) rotate(-12.75)" fill="#6c63ff" opacity="0.3" />
-												<rect x="410.68" y="203.79" width="213.27" height="308.72" rx="13.44" transform="translate(-153.95 8.85) rotate(-12.75)" fill="url(#af3e6cbd-120e-45f3-bb1d-3967e91ae903)" />
-												<rect x="412.36" y="207.74" width="207.97" height="302.01" rx="13.44" transform="translate(-154.1 8.65) rotate(-12.75)" fill="#6c63ff" />
-												<g opacity="0.5">
-													<rect x="220.35" y="542.11" width="3" height="17" fill="#47e6b1" />
-													<rect x="308" y="656.29" width="3" height="17" transform="translate(886.64 241.11) rotate(90)" fill="#47e6b1" />
-												</g>
-												<g opacity="0.5">
-													<rect x="726.55" y="32.76" width="3" height="17" fill="#47e6b1" />
-													<rect x="814.2" y="146.94" width="3" height="17" transform="translate(883.49 -774.44) rotate(90)" fill="#47e6b1" />
-												</g>
-												<g opacity="0.5">
-													<rect x="636.55" y="249.76" width="3" height="17" fill="#47e6b1" />
-													<rect x="724.2" y="363.94" width="3" height="17" transform="translate(1010.49 -467.44) rotate(90)" fill="#47e6b1" />
-												</g>
-												<g opacity="0.5">
-													<rect x="894.15" y="288.76" width="3" height="17" fill="#47e6b1" />
-													<rect x="981.8" y="402.94" width="3" height="17" transform="translate(1307.08 -686.03) rotate(90)" fill="#47e6b1" />
-												</g>
-												<path d="M482.69,654.59a3.68,3.68,0,0,1-2.05-4.44,1.15,1.15,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a2.53,2.53,0,0,0-.2.36,3.67,3.67,0,0,1-4.44,2,1.86,1.86,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.88,1.88,0,0,0,.36.21,3.67,3.67,0,0,1,2.05,4.44,1.89,1.89,0,0,0-.08.4h0a1.84,1.84,0,0,0,3.31,1.23h0a1.9,1.9,0,0,0,.2-.37,3.68,3.68,0,0,1,4.45-2,1.77,1.77,0,0,0,.4.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,482.69,654.59Z" transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
-												<path d="M628.89,779.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,628.89,779.24Z" transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
-												<path d="M847.89,348.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,847.89,348.24Z" transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
-												<path d="M999.89,509.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,999.89,509.24Z" transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
-												<circle cx="142.35" cy="487.11" r="6" fill="#f55f44" opacity="0.5" />
-												<circle cx="523.55" cy="50.76" r="6" fill="#4d8af0" opacity="0.5" />
-												<circle cx="498.55" cy="489.76" r="6" fill="#47e6b1" opacity="0.5" />
-												<circle cx="844.55" cy="639.76" r="6" fill="#f55f44" opacity="0.5" />
-												<g opacity="0.5">
-													<path d="M848.9,203.3h286a6.29,6.29,0,0,1,6.29,6.29V362.51a6.29,6.29,0,0,1-6.29,6.29h-286a6.28,6.28,0,0,1-6.28-6.28V209.58A6.29,6.29,0,0,1,848.9,203.3Z" transform="translate(346.54 1040.57) rotate(-73.39)" fill="url(#ad46d94a-2a5e-454e-b2ea-f38dffec9c1a)" />
-												</g>
-												<rect x="911.41" y="140.66" width="161.02" height="290.64" rx="13.64" transform="translate(35.53 -385.86) rotate(16.61)" fill="#fff" />
-												<path d="M1070.15,165.27a13,13,0,0,1-15.5,7l-53.29-15.91A13.05,13.05,0,0,1,992.2,142L964,133.59a6.13,6.13,0,0,0-7.61,4.11L880.92,390.53a6.11,6.11,0,0,0,4.12,7.6l134.84,40.24a6.11,6.11,0,0,0,7.6-4.11l75.44-252.83a6.1,6.1,0,0,0-4.11-7.6Z" transform="translate(-87.65 -114.18)" fill="#e0e0e0" />
-												<rect x="1010.74" y="156.59" width="35.88" height="2.24" rx="1.12" transform="translate(-5.15 -389.83) rotate(15.89)" fill="#dbdbdb" />
-												<circle cx="965.68" cy="50.32" r="1.35" fill="#dbdbdb" />
-												<rect x="953.4" y="188.74" width="44" height="38" transform="translate(2.54 -365.73) rotate(15.4)" fill="#fff" />
-												<rect x="938.79" y="241.77" width="44" height="38" transform="translate(16.09 -359.95) rotate(15.4)" fill="#6c63ff" opacity="0.3" />
-												<rect x="924.19" y="294.79" width="44" height="38" transform="translate(29.65 -354.17) rotate(15.4)" fill="#fff" />
-												<rect x="909.58" y="347.82" width="44" height="38" transform="translate(43.2 -348.39) rotate(15.4)" fill="#3ad29f" opacity="0.3" />
-												<rect x="1008.3" y="214.49" width="58" height="4" transform="translate(7.08 -381.86) rotate(15.4)" fill="#fff" />
-												<rect x="1005.11" y="226.06" width="58" height="4" transform="translate(10.04 -380.6) rotate(15.4)" fill="#fff" />
-												<rect x="993.96" y="266.56" width="58" height="4" transform="translate(20.39 -376.18) rotate(15.4)" fill="#fff" />
-												<rect x="990.77" y="278.12" width="58" height="4" transform="translate(23.35 -374.92) rotate(15.4)" fill="#fff" />
-												<rect x="979.62" y="318.62" width="58" height="4" transform="translate(33.7 -370.5) rotate(15.4)" fill="#fff" />
-												<rect x="976.43" y="330.19" width="58" height="4" transform="translate(36.66 -369.24) rotate(15.4)" fill="#fff" />
-												<rect x="965.28" y="370.68" width="58" height="4" transform="translate(47.01 -364.83) rotate(15.4)" fill="#fff" />
-												<rect x="962.09" y="382.25" width="58" height="4" transform="translate(49.97 -363.56) rotate(15.4)" fill="#fff" />
-											</svg>
-											<!--end::Svg Icon-->
-										</span>
-									</div>
-									<!--end::SVG-->
-									<!--begin::Hero Body-->
-									<div class="card-body d-flex justify-content-center flex-column col-lg-6 px-8 py-20 px-lg-20 py-lg-40">
-										<!--begin::Heading-->
-										<img src="assets/media/client-logos/programando-con-manuel-soberano.jpg" width="50px">
-										<h2 class="text-dark font-weight-bolder mb-8">PROGRAMANDO CON MANUEL SOBERANO</h2>
-										<p>Hola, soy Manuel Soberano. Autor de este blog, desarrollador de software, emprendedor y entusiasta por el desarrollo, creación y aplicación de nuevas tecnologías.</p>
-										<!--end::Heading-->
-									</div>
-									<!--end::Hero Body-->
+						<!--end::Header Menu Wrapper-->
+						<!--begin::Topbar-->
+						<div class="topbar">
+							<!--begin::Social Networks-->
+							<div class="topbar-item">
+								<div class="btn btn-clean btn-lg mr-1">
+									<a class="svg-icon svg-icon-primary"
+										href="https://www.linkedin.com/in/josemanuelcampossoberano/" target="_blank">
+										<img src="assets/media/svg/logos/linkedin.svg" height="24" />
+									</a>
 								</div>
-								<!--end::Hero-->
-								<!--begin::Section-->
-								<div class="row">
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Arquitectura de Software Avanzada en .NET Core: Clean Architecture, CQRS, Entity Framework y más</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://youtu.be/W70ROca-spc">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Arquitectura de Software Avanzada en .NET Core Clean Architecture, CQRS, Entity Framework y más.png">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Building a RESTful API with ASP.NET Core 3</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=XATHQ7fCgBw&list=PLb0-oWxM7NZQiuGQTtZKZYxpY0lqMlAeF">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Building%20a%20RESTful%20API%20with%20ASP.NET%20Core%203.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Building Advanced RESTful API with ASP.NET Core 3.1</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=kc38oTRWSks&list=PLb0-oWxM7NZSbXll2orB0GVaJ64MgCWEX">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Building%20Advanced%20RESTful%20API%20with%20ASP.NET%20Core%203.1.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Securing a Web API using JSON Web Tokens</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=8FTJopfyIx4&list=PLb0-oWxM7NZQO6eT5YX55GcrsjvTL7yRn">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Securing%20a%20Web%20API%20using%20JSON%20web%20tokens.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Consuming an Web API secured with Json Web Tokens using Angular</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=e3l6arj3-Yg&list=PLb0-oWxM7NZTaKr_s3aqDqFusu82VJjO7">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Consuming%20an%20Web%20API%20secured%20with%20Json%20Web%20Tokens%20using%20Angular.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Automated scaffolding with Angular Schematics</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=7WcrZw2YTng&list=PLb0-oWxM7NZTD2t_M-jwXIMfxowMXp82N">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Automated%20scaffolding%20with%20Angular%20Schematics.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Creating and Publishing an NPM Package</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=YUfpOkE-OKo&list=PLb0-oWxM7NZTpZTtC2PdxNIdNfjScxa1w">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Creating%20and%20Publishing%20an%20NPM%20Package.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Card-->
-										<div class="card mb-8">
-											<div class="card-body">
-												<div class="p-4">
-													<div class="d-flex justify-content-between align-items-center mb-8">
-														<!--begin::Heading-->
-														<h2 class="text-dark">Entity Framework Core 2 Getting Started</h2>
-														<!--end::Heading-->
-														<!--begin::Badge-->
-														<div class="btn btn-text btn-sm btn-light-primary font-weight-bolder">Video</div>
-														<!--end::Badge-->
-													</div>
-													<!--begin::Content-->
-													<a target="_blank" href="https://www.youtube.com/watch?v=n4MTXrvaCAk&list=PLb0-oWxM7NZSOrP4qF75dZtvGsvkbjr_7">
-														<img class="img-fluid" alt="Pic" src="/assets/media/posts/Entity%20Framework%20Core%202%20Getting%20Started.jpg">
-													</a>
-													<!--end::Content-->
-												</div>
-											</div>
-										</div>
-										<!--begin::Card-->
-									</div>
+							</div>
+							<div class="topbar-item">
+								<div class="btn btn-icon btn-clean btn-lg mr-1">
+									<a class="svg-icon svg-icon-primary"
+										href="https://www.youtube.com/channel/UCcl4SkM6xgFoOCpVv1hKXCg" target="_blank">
+										<img src="assets/media/svg/logos/youtube-3.svg" height="24" />
+									</a>
 								</div>
-								<!--end::Section-->
 							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Entry-->
-					</div>
-					<!--end::Content-->
-					<!--begin::Footer-->
-					<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<!--begin::Copyright-->
-							<div class="text-dark order-2 order-md-1 d-flex">
-								<span class="text-muted font-weight-bold mr-2 flex-column ">2022©</span>
-								<span class="text-dark-75 flex-column">Manuel Soberano</span>
+							<div class="topbar-item">
+								<div class="btn btn-icon btn-clean btn-lg mr-1">
+									<a class="svg-icon svg-icon-primary" href="https://twitter.com/jmanuelsoberano"
+										target="_blank">
+										<img src="assets/media/svg/logos/twitter.svg" height="24" />
+									</a>
+								</div>
 							</div>
-							<!--end::Copyright-->
+							<div class="topbar-item">
+								<div class="btn btn-icon btn-clean btn-lg mr-1">
+									<a class="svg-icon svg-icon-primary" href="https://github.com/jmanuelsoberano"
+										target="_blank">
+										<img src="assets/media/svg/logos/github-1.svg" height="24" />
+									</a>
+								</div>
+							</div>
+							<!--end::Social Networks-->
+							<!--begin::User-->
+							<div class="topbar-item">
+								<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2"
+									id="kt_quick_user_toggle">
+									<span
+										class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
+									<span
+										class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">I'm
+										Manuel Soberano</span>
+									<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
+										<img class="symbol"
+											src="assets/media/client-logos/programando-con-manuel-soberano.jpg"
+											width="50px">
+										<!--											<span class="symbol-label font-size-h5 font-weight-bold">S</span>-->
+									</span>
+								</div>
+							</div>
+							<!--end::User-->
 						</div>
-						<!--end::Container-->
+						<!--end::Topbar-->
 					</div>
-					<!--end::Footer-->
+					<!--end::Container-->
 				</div>
-				<!--end::Wrapper-->
+				<!--end::Header-->
+				<!--begin::Content-->
+				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+					<!--begin::Entry-->
+					<div class="d-flex flex-column-fluid">
+						<!--begin::Container-->
+						<div class="container">
+							<!--begin::Hero-->
+							<div class="card card-custom overflow-hidden position-relative mb-8">
+								<!--begin::SVG-->
+								<div class="position-absolute bottom-0 left-0 right-0 d-none d-lg-flex flex-row-fluid">
+									<span class="svg-icon svg-icon-full flex-row-fluid svg-icon-dark opacity-3">
+										<!--begin::Svg Icon | path:assets/media/bg/home-2-bg.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+											x="0px" y="0px" viewBox="0 0 1200 172"
+											style="enable-background:new 0 0 1200 172;" xml:space="preserve">
+											<path class="st0"
+												d="M2058,94c0,0,16-14,73-14s153,92,248,92s286-145,456-145s183,34,292,34s131-54,131-54v172H2058V94z" />
+											<path class="st0"
+												d="M0,87c0,0,16-14,73-14s153,92,248,92S607,20,777,20s183,34,292,34s131-54,131-54v172H0V87z" />
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+								</div>
+								<div
+									class="position-absolute d-flex top-0 right-0 offset-lg-5 col-lg-7 opacity-30 opacity-lg-100">
+									<span class="svg-icon svg-icon-full flex-row-fluid p-15">
+										<!--begin::Svg Icon | path:assets/media/svg/illustrations/working.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink"
+											id="e66d77ca-31e8-442d-a5de-b801817c4280" data-name="Layer 1" width="1024.7"
+											height="671.65" viewBox="0 0 1024.7 671.65">
+											<circle cx="720.55" cy="430.76" r="105"
+												fill="url(#a374d817-ded2-4154-8f0a-fb69bb0241af)" />
+											<circle cx="720.55" cy="430.76" r="100" fill="#f5f5f5" />
+											<g opacity="0.5">
+												<path
+													d="M811,482.47a62.52,62.52,0,0,0-64.27,55.82h-18a3.64,3.64,0,0,0-3.64,3.64v6a3.65,3.65,0,0,0,3.64,3.65h18A62.5,62.5,0,1,0,811,482.47Z"
+													transform="translate(-87.65 -114.18)"
+													fill="url(#fd39efba-8078-41b8-857e-e17431406f47)" />
+											</g>
+											<path
+												d="M810.19,486.22a58.75,58.75,0,0,0-60.41,52.47H732.36a2.91,2.91,0,0,0-2.91,2.91v6.67a2.91,2.91,0,0,0,2.91,2.92h17.42a58.75,58.75,0,1,0,60.41-65Z"
+												transform="translate(-87.65 -114.18)" fill="#fff" />
+											<circle cx="720.55" cy="430.76" r="41.25" fill="#795548" />
+											<path
+												d="M829.45,524.94s11.77,18.28,8.4,32.5C837.85,557.44,851.3,535.09,829.45,524.94Z"
+												transform="translate(-87.65 -114.18)" fill="#fff" opacity="0.2" />
+											<circle cx="746.8" cy="453.26" r="3.75" fill="#fff" opacity="0.2" />
+											<rect x="119.09" y="182.63" width="213.27" height="308.72"
+												transform="translate(-156.47 -56.04) rotate(-12.75)"
+												fill="url(#b2bf7fa1-65c2-4695-aeca-af8d6fc55ae3)" />
+											<rect x="334.38" y="133.91" width="213.27" height="308.72"
+												transform="translate(-140.4 -9.72) rotate(-12.75)"
+												fill="url(#a8abeec4-29f5-4a5c-9a38-56f560b9b0a3)" />
+											<rect x="122.15" y="186.27" width="207.97" height="302.01"
+												transform="translate(-156.52 -55.94) rotate(-12.75)" fill="#6c63ff" />
+											<rect x="336.06" y="137.86" width="207.97" height="302.01"
+												transform="translate(-140.56 -9.92) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="135.55" y="222.61" width="124.88" height="20.81"
+												transform="translate(-134.2 -64.73) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="124.12" y="271.86" width="166.5" height="5.2"
+												transform="translate(-143.12 -61.63) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="126.8" y="283.7" width="166.5" height="5.2"
+												transform="translate(-145.67 -60.75) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="129.48" y="295.54" width="166.5" height="5.2"
+												transform="translate(-148.21 -59.87) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="133.23" y="316.95" width="79.78" height="5.2"
+												transform="translate(-153.92 -68.08) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="135.76" y="327.46" width="91.92" height="5.2"
+												transform="translate(-156.02 -65.92) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="137.52" y="331.07" width="166.5" height="5.2"
+												transform="translate(-155.86 -57.21) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="140.2" y="342.91" width="166.5" height="5.2"
+												transform="translate(-158.4 -56.33) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="143.03" y="356.09" width="154.36" height="5.2"
+												transform="translate(-161.39 -56.72) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="145.56" y="366.59" width="166.5" height="5.2"
+												transform="translate(-163.5 -54.56) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="149.22" y="387.24" width="86.72" height="5.2"
+												transform="translate(-168.95 -62.05) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="372.13" y="350.43" width="91.92" height="5.2"
+												transform="translate(-155.26 -13.18) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="373.89" y="354.04" width="166.5" height="5.2"
+												transform="translate(-155.1 -4.47) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="376.57" y="365.88" width="166.5" height="5.2"
+												transform="translate(-157.64 -3.59) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="379.4" y="379.06" width="154.36" height="5.2"
+												transform="translate(-160.63 -3.98) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="381.93" y="389.56" width="166.5" height="5.2"
+												transform="translate(-162.74 -1.82) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="385.59" y="410.21" width="86.72" height="5.2"
+												transform="translate(-168.19 -9.31) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="221.62" y="391.43" width="100.59" height="69.38"
+												transform="translate(-175 -43.64) rotate(-12.75)" fill="#f5f5f5" />
+											<rect x="337.76" y="165.98" width="100.59" height="69.38"
+												transform="translate(-122.37 -23.57) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="433.79" y="236.72" width="100.59" height="69.38"
+												transform="translate(-135.62 -0.63) rotate(-12.75)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="410.68" y="203.79" width="213.27" height="308.72" rx="13.44"
+												transform="translate(-153.95 8.85) rotate(-12.75)"
+												fill="url(#af3e6cbd-120e-45f3-bb1d-3967e91ae903)" />
+											<rect x="412.36" y="207.74" width="207.97" height="302.01" rx="13.44"
+												transform="translate(-154.1 8.65) rotate(-12.75)" fill="#6c63ff" />
+											<g opacity="0.5">
+												<rect x="220.35" y="542.11" width="3" height="17" fill="#47e6b1" />
+												<rect x="308" y="656.29" width="3" height="17"
+													transform="translate(886.64 241.11) rotate(90)" fill="#47e6b1" />
+											</g>
+											<g opacity="0.5">
+												<rect x="726.55" y="32.76" width="3" height="17" fill="#47e6b1" />
+												<rect x="814.2" y="146.94" width="3" height="17"
+													transform="translate(883.49 -774.44) rotate(90)" fill="#47e6b1" />
+											</g>
+											<g opacity="0.5">
+												<rect x="636.55" y="249.76" width="3" height="17" fill="#47e6b1" />
+												<rect x="724.2" y="363.94" width="3" height="17"
+													transform="translate(1010.49 -467.44) rotate(90)" fill="#47e6b1" />
+											</g>
+											<g opacity="0.5">
+												<rect x="894.15" y="288.76" width="3" height="17" fill="#47e6b1" />
+												<rect x="981.8" y="402.94" width="3" height="17"
+													transform="translate(1307.08 -686.03) rotate(90)" fill="#47e6b1" />
+											</g>
+											<path
+												d="M482.69,654.59a3.68,3.68,0,0,1-2.05-4.44,1.15,1.15,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a2.53,2.53,0,0,0-.2.36,3.67,3.67,0,0,1-4.44,2,1.86,1.86,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.88,1.88,0,0,0,.36.21,3.67,3.67,0,0,1,2.05,4.44,1.89,1.89,0,0,0-.08.4h0a1.84,1.84,0,0,0,3.31,1.23h0a1.9,1.9,0,0,0,.2-.37,3.68,3.68,0,0,1,4.45-2,1.77,1.77,0,0,0,.4.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,482.69,654.59Z"
+												transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
+											<path
+												d="M628.89,779.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,628.89,779.24Z"
+												transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
+											<path
+												d="M847.89,348.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,847.89,348.24Z"
+												transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
+											<path
+												d="M999.89,509.24a3.68,3.68,0,0,1-2-4.44,1.86,1.86,0,0,0,.08-.41h0a1.84,1.84,0,0,0-3.31-1.22h0a1.82,1.82,0,0,0-.2.36,3.66,3.66,0,0,1-4.44,2.05,2,2,0,0,0-.41-.08h0a1.84,1.84,0,0,0-1.22,3.31h0a1.62,1.62,0,0,0,.36.21,3.68,3.68,0,0,1,2,4.44,1.86,1.86,0,0,0-.08.41h0a1.84,1.84,0,0,0,3.31,1.22h0a1.65,1.65,0,0,0,.2-.37,3.67,3.67,0,0,1,4.44-2,2,2,0,0,0,.41.08h0a1.84,1.84,0,0,0,1.22-3.31h0A1.62,1.62,0,0,0,999.89,509.24Z"
+												transform="translate(-87.65 -114.18)" fill="#4d8af0" opacity="0.5" />
+											<circle cx="142.35" cy="487.11" r="6" fill="#f55f44" opacity="0.5" />
+											<circle cx="523.55" cy="50.76" r="6" fill="#4d8af0" opacity="0.5" />
+											<circle cx="498.55" cy="489.76" r="6" fill="#47e6b1" opacity="0.5" />
+											<circle cx="844.55" cy="639.76" r="6" fill="#f55f44" opacity="0.5" />
+											<g opacity="0.5">
+												<path
+													d="M848.9,203.3h286a6.29,6.29,0,0,1,6.29,6.29V362.51a6.29,6.29,0,0,1-6.29,6.29h-286a6.28,6.28,0,0,1-6.28-6.28V209.58A6.29,6.29,0,0,1,848.9,203.3Z"
+													transform="translate(346.54 1040.57) rotate(-73.39)"
+													fill="url(#ad46d94a-2a5e-454e-b2ea-f38dffec9c1a)" />
+											</g>
+											<rect x="911.41" y="140.66" width="161.02" height="290.64" rx="13.64"
+												transform="translate(35.53 -385.86) rotate(16.61)" fill="#fff" />
+											<path
+												d="M1070.15,165.27a13,13,0,0,1-15.5,7l-53.29-15.91A13.05,13.05,0,0,1,992.2,142L964,133.59a6.13,6.13,0,0,0-7.61,4.11L880.92,390.53a6.11,6.11,0,0,0,4.12,7.6l134.84,40.24a6.11,6.11,0,0,0,7.6-4.11l75.44-252.83a6.1,6.1,0,0,0-4.11-7.6Z"
+												transform="translate(-87.65 -114.18)" fill="#e0e0e0" />
+											<rect x="1010.74" y="156.59" width="35.88" height="2.24" rx="1.12"
+												transform="translate(-5.15 -389.83) rotate(15.89)" fill="#dbdbdb" />
+											<circle cx="965.68" cy="50.32" r="1.35" fill="#dbdbdb" />
+											<rect x="953.4" y="188.74" width="44" height="38"
+												transform="translate(2.54 -365.73) rotate(15.4)" fill="#fff" />
+											<rect x="938.79" y="241.77" width="44" height="38"
+												transform="translate(16.09 -359.95) rotate(15.4)" fill="#6c63ff"
+												opacity="0.3" />
+											<rect x="924.19" y="294.79" width="44" height="38"
+												transform="translate(29.65 -354.17) rotate(15.4)" fill="#fff" />
+											<rect x="909.58" y="347.82" width="44" height="38"
+												transform="translate(43.2 -348.39) rotate(15.4)" fill="#3ad29f"
+												opacity="0.3" />
+											<rect x="1008.3" y="214.49" width="58" height="4"
+												transform="translate(7.08 -381.86) rotate(15.4)" fill="#fff" />
+											<rect x="1005.11" y="226.06" width="58" height="4"
+												transform="translate(10.04 -380.6) rotate(15.4)" fill="#fff" />
+											<rect x="993.96" y="266.56" width="58" height="4"
+												transform="translate(20.39 -376.18) rotate(15.4)" fill="#fff" />
+											<rect x="990.77" y="278.12" width="58" height="4"
+												transform="translate(23.35 -374.92) rotate(15.4)" fill="#fff" />
+											<rect x="979.62" y="318.62" width="58" height="4"
+												transform="translate(33.7 -370.5) rotate(15.4)" fill="#fff" />
+											<rect x="976.43" y="330.19" width="58" height="4"
+												transform="translate(36.66 -369.24) rotate(15.4)" fill="#fff" />
+											<rect x="965.28" y="370.68" width="58" height="4"
+												transform="translate(47.01 -364.83) rotate(15.4)" fill="#fff" />
+											<rect x="962.09" y="382.25" width="58" height="4"
+												transform="translate(49.97 -363.56) rotate(15.4)" fill="#fff" />
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+								</div>
+								<!--end::SVG-->
+								<!--begin::Hero Body-->
+								<div
+									class="card-body d-flex justify-content-center flex-column col-lg-6 px-8 py-20 px-lg-20 py-lg-40">
+									<!--begin::Heading-->
+									<img src="assets/media/client-logos/programando-con-manuel-soberano.jpg"
+										width="50px">
+									<h2 class="text-dark font-weight-bolder mb-8">MANUEL SOBERANO</h2>
+									<p>Soy Manuel Soberano, desarrollador de software, creador de contenido y
+										emprendedor. Me entusiasma la tecnología, pero me importa más lo que sigue
+										siendo válido aunque la tecnología cambie,, los fundamentos: valores, principios
+										y buenas prácticas que ayudan a construir software de calidad —mantenible,
+										seguro, confiable y listo para evolucionar—. Aquí comparto lo que he aprendido
+										de grandes profesionales, libros y experiencia construyendo sistemas, intentando
+										aterrizar esas ideas para que sean útiles en proyectos reales: desde
+										arquitectura y diseño, hasta automatización y calidad del código.</p>
+									<!--end::Heading-->
+								</div>
+								<!--end::Hero Body-->
+							</div>
+							<!--end::Hero-->
+							<!--begin::Section-->
+							<div class="row">
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Arquitectura de Software Avanzada en .NET
+														Core: Clean Architecture, CQRS, Entity Framework y más</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank" href="https://youtu.be/W70ROca-spc">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Arquitectura de Software Avanzada en .NET Core Clean Architecture, CQRS, Entity Framework y más.png">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Building a RESTful API with ASP.NET Core 3
+													</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=XATHQ7fCgBw&list=PLb0-oWxM7NZQiuGQTtZKZYxpY0lqMlAeF">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Building%20a%20RESTful%20API%20with%20ASP.NET%20Core%203.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Building Advanced RESTful API with ASP.NET
+														Core 3.1</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=kc38oTRWSks&list=PLb0-oWxM7NZSbXll2orB0GVaJ64MgCWEX">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Building%20Advanced%20RESTful%20API%20with%20ASP.NET%20Core%203.1.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Securing a Web API using JSON Web Tokens</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=8FTJopfyIx4&list=PLb0-oWxM7NZQO6eT5YX55GcrsjvTL7yRn">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Securing%20a%20Web%20API%20using%20JSON%20web%20tokens.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Consuming an Web API secured with Json Web
+														Tokens using Angular</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=e3l6arj3-Yg&list=PLb0-oWxM7NZTaKr_s3aqDqFusu82VJjO7">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Consuming%20an%20Web%20API%20secured%20with%20Json%20Web%20Tokens%20using%20Angular.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Automated scaffolding with Angular Schematics
+													</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=7WcrZw2YTng&list=PLb0-oWxM7NZTD2t_M-jwXIMfxowMXp82N">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Automated%20scaffolding%20with%20Angular%20Schematics.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Creating and Publishing an NPM Package</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=YUfpOkE-OKo&list=PLb0-oWxM7NZTpZTtC2PdxNIdNfjScxa1w">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Creating%20and%20Publishing%20an%20NPM%20Package.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+								<div class="col-lg-6">
+									<!--begin::Card-->
+									<div class="card mb-8">
+										<div class="card-body">
+											<div class="p-4">
+												<div class="d-flex justify-content-between align-items-center mb-8">
+													<!--begin::Heading-->
+													<h2 class="text-dark">Entity Framework Core 2 Getting Started</h2>
+													<!--end::Heading-->
+													<!--begin::Badge-->
+													<div
+														class="btn btn-text btn-sm btn-light-primary font-weight-bolder">
+														Video</div>
+													<!--end::Badge-->
+												</div>
+												<!--begin::Content-->
+												<a target="_blank"
+													href="https://www.youtube.com/watch?v=n4MTXrvaCAk&list=PLb0-oWxM7NZSOrP4qF75dZtvGsvkbjr_7">
+													<img class="img-fluid" alt="Pic"
+														src="/assets/media/posts/Entity%20Framework%20Core%202%20Getting%20Started.jpg">
+												</a>
+												<!--end::Content-->
+											</div>
+										</div>
+									</div>
+									<!--begin::Card-->
+								</div>
+							</div>
+							<!--end::Section-->
+						</div>
+						<!--end::Container-->
+					</div>
+					<!--end::Entry-->
+				</div>
+				<!--end::Content-->
+				<!--begin::Footer-->
+				<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
+					<!--begin::Container-->
+					<div
+						class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+						<!--begin::Copyright-->
+						<div class="text-dark order-2 order-md-1 d-flex">
+							<span class="text-muted font-weight-bold mr-2 flex-column ">2022©</span>
+							<span class="text-dark-75 flex-column">Manuel Soberano</span>
+						</div>
+						<!--end::Copyright-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Footer-->
 			</div>
-			<!--end::Page-->
+			<!--end::Wrapper-->
 		</div>
-		<!--end::Main-->
+		<!--end::Page-->
+	</div>
+	<!--end::Main-->
 
-		<!--begin::Scrolltop-->
-		<div id="kt_scrolltop" class="scrolltop">
-			<span class="svg-icon">
-				<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<polygon points="0 0 24 0 24 24 0 24" />
-						<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
-						<path d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z" fill="#000000" fill-rule="nonzero" />
-					</g>
-				</svg>
-				<!--end::Svg Icon-->
-			</span>
-		</div>
-		<!--end::Scrolltop-->
+	<!--begin::Scrolltop-->
+	<div id="kt_scrolltop" class="scrolltop">
+		<span class="svg-icon">
+			<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+				height="24px" viewBox="0 0 24 24" version="1.1">
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<polygon points="0 0 24 0 24 24 0 24" />
+					<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
+					<path
+						d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z"
+						fill="#000000" fill-rule="nonzero" />
+				</g>
+			</svg>
+			<!--end::Svg Icon-->
+		</span>
+	</div>
+	<!--end::Scrolltop-->
 
-		<!--begin::Global Config(global config for global JS scripts)-->
-		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
-		<!--end::Global Config-->
-		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
-		<!--end::Global Theme Bundle-->
-	</body>
-	<!--end::Body-->
+	<!--begin::Global Config(global config for global JS scripts)-->
+	<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+	<!--end::Global Config-->
+	<!--begin::Global Theme Bundle(used by all pages)-->
+	<script src="assets/plugins/global/plugins.bundle.js"></script>
+	<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+	<script src="assets/js/scripts.bundle.js"></script>
+	<!--end::Global Theme Bundle-->
+</body>
+<!--end::Body-->
+
 </html>
