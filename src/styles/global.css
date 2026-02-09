@@ -114,6 +114,10 @@ body {
   font-size: var(--text-base);
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  /* Sticky Footer Setup */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Typography */
